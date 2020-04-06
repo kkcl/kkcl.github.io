@@ -305,12 +305,40 @@
       
         
 
+  <article class="post post-type-about" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2020/04/06/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A014/" itemprop="url">
+              
+                <span itemprop="name">测试文章12</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2020-04-06T15:20:34+08:00"
+              content="2020-04-06" >
+          04-06
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2020/04/03/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A013/" itemprop="url">
+            <a class="post-title-link" href="/2020/04/03/%E7%AE%97%E6%B3%95/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A013/" itemprop="url">
               
                 <span itemprop="name">测试文章13</span>
               
@@ -555,34 +583,6 @@
 
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/04/03/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A004/" itemprop="url">
-              
-                <span itemprop="name">测试文章04</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-03T16:00:13+08:00"
-              content="2020-04-03" >
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
     </div>
 
   </div>
@@ -643,7 +643,7 @@
             
               <div class="site-state-item site-state-posts">
                 <a href="/archives">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -682,6 +682,22 @@
             </div>
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:svip.cheng@gmail.com" target="_blank" title="邮箱">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>邮箱</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mp.weixin.qq.com/s/yfbA8EzI-H0j7530vQgQnQ" target="_blank" title="微信公众号">
+                      
+                        <i class="fa fa-fw fa-weixin"></i>微信公众号</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -727,37 +743,42 @@
 
 
 <!--添加网站的运行时间-->
-<span id="sitetime"> <br></span>
-<script language="javascript">
+<span id="sitetime"></span>
+<script language=javascript>
 	function siteTime(){
 		window.setTimeout("siteTime()", 1000);
-		var seconds = 1000
-		var minutes = seconds * 60
-		var hours = minutes * 60
-		var days = hours * 24
-		var years = days * 365
-
-		var today = new Date()
-		var todayYear = today.getFullYear()
-		var todayMonth = today.getMonth()
-		var todayDate = today.getDate()
-		var todayHour = today.getHours()
-		var todayMinute = today.getMinutes()
-		var todaySecond = today.getSeconds()
-		var t1 = Date.UTC(2019,4,4,12,00,00)
-		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
-		var diff = t2-t1
-
-		var diffYears = Math.floor(diff/years)
-		var diffDays = Math.floor((diff/days)-diffYears*365)
-		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
-		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
-		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
-		document.getElementById("sitetime").innerHTML=" 本站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒<br>"
-	}
-	siteTime()
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2020,04,04,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
 </script>
-
 
 
         
