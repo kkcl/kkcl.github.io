@@ -28,6 +28,26 @@
       </tags>
   </entry>
   <entry>
+    <title>使用Java将word转换成pdf</title>
+    <url>/%E4%BD%BF%E7%94%A8Java%E5%B0%86word%E8%BD%AC%E6%8D%A2%E6%88%90pdf/</url>
+    <content><![CDATA[<p>在日常的学习中，我们经常会碰到需要将word文件转换为pdf的情形，因为大部分的情况下一些免费的线上网站都只能转换一页，同时由于信息保密的考虑，大部分的人还是不愿意在这样的网站进行操作的。那么是否有简单的方法可以将word转换为pdf呢？其实作为一名开发人员，只要经过简单的网络搜索都应该能够实现，以下就是博主的解决方案。</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import com.aspose.words.Document;</span><br><span class="line">import java.io.File;</span><br><span class="line"> </span><br><span class="line">public class WordToPdf &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">             &#x2F;&#x2F;doc路径</span><br><span class="line">            Document document &#x3D; new Document(&quot;C:\\Users\\CHENG\\Desktop\\数学建模定稿.docx&quot;);</span><br><span class="line">            &#x2F;&#x2F;pdf路径</span><br><span class="line">            File outputFile &#x3D; new File(&quot;C:\\Users\\CHENG\\Desktop\\数学建模定稿.pdf&quot;);</span><br><span class="line">            &#x2F;&#x2F;操作文档保存</span><br><span class="line">            document.save(outputFile.getAbsolutePath(), com.aspose.words.SaveFormat.PDF);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考资料：<a href="https://blog.csdn.net/qq_38061755/article/details/82730139" target="_blank" rel="noopener">https://blog.csdn.net/qq_38061755/article/details/82730139</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>工具代码</category>
+      </categories>
+      <tags>
+        <tag>word</tag>
+        <tag>pdf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>武汉物理解封容易，人心解封却很难！</title>
     <url>/%E6%AD%A6%E6%B1%89%E7%89%A9%E7%90%86%E8%A7%A3%E5%B0%81%E5%AE%B9%E6%98%93,%E4%BA%BA%E5%BF%83%E8%A7%A3%E5%B0%81%E5%8D%B4%E5%BE%88%E9%9A%BE/</url>
     <content><![CDATA[<p>​今天是2020年4月8日，历史将会铭记这个特殊的日子。经过整整76天漫长的等待之后，湖北省武汉市终于打开了尘封许久的通道大门，这意味着从今天开始，整个湖北省都将有序放开省内省外人员流动限制，从这这点而言，以湖北为重灾区的疫情主战场已经取得了重大的胜利，真正达到了总书记所强调的武汉胜则湖北胜，湖北胜则全国胜的要求。然而有时候物理上的解封还相对容易，可如何消除湖北省以外，各地居民心底上的枷锁、戒备却还是个值得研究的重要命题。</p>
