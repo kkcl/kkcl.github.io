@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="饱腹百科">
 <meta property="og:description" content="一般而言，对于后端web开发人员而言，过滤器和拦截器始终是一道迈不过去的门槛，不管是在私下的个人项目练习中还是日常的开发工作中，拦截器和过滤器始终是作为一个后端开发工程师必须掌握的技术点，虽然这两个技术点非常的重要，但是由于日常的开发工作可能主要是以业务开发为主，因此很多人常常忽略这两个技术点。">
 <meta property="article:published_time" content="2020-10-25T08:54:11.276Z">
-<meta property="article:modified_time" content="2020-10-25T14:44:31.638Z">
+<meta property="article:modified_time" content="2020-11-15T06:37:59.240Z">
 <meta property="article:author" content="饱腹百科">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -424,7 +424,7 @@
 
       
         <p>一般而言，对于后端web开发人员而言，过滤器和拦截器始终是一道迈不过去的门槛，不管是在私下的个人项目练习中还是日常的开发工作中，拦截器和过滤器始终是作为一个后端开发工程师必须掌握的技术点，虽然这两个技术点非常的重要，但是由于日常的开发工作可能主要是以业务开发为主，因此很多人常常忽略这两个技术点。<a id="more"></a>甚至经常有人在面试的过程中被面试管问道相关的问题时甚至有可能三缄其口，鉴于此种情况，十分有必要彻底搞懂这两个技术点。</p>
-<h3 id="拦截器和过滤器分别是什么？"><a href="#拦截器和过滤器分别是什么？" class="headerlink" title="拦截器和过滤器分别是什么？"></a>拦截器和过滤器分别是什么？</h3><p>其实拦截器和过滤器两者的作用在功能方面非常的类似，甚至在某些场景下所起的作用可以说是基本相同的，举个形象的例子：当我们去往某个陌生的小区时，小区的大门就是阻挡我们的第一道门槛，进去小区之后如果想要进入某具体的楼层时，则需要有对应楼层的门禁卡，这个例子中过滤器就充当了小区大门的角色，而拦截器则起着具体楼层门禁卡的作用。一般而言当发起一次请求时，最先经过过滤器处理，然而在经过相应的拦截器处理。</p>
+<h3 id="拦截器和过滤器分别是什么"><a href="#拦截器和过滤器分别是什么" class="headerlink" title="拦截器和过滤器分别是什么"></a>拦截器和过滤器分别是什么</h3><p>其实拦截器和过滤器两者的作用在功能方面非常的类似，甚至在某些场景下所起的作用可以说是基本相同的，举个形象的例子：当我们去往某个陌生的小区时，小区的大门就是阻挡我们的第一道门槛，进去小区之后如果想要进入某具体的楼层时，则需要有对应楼层的门禁卡，这个例子中过滤器就充当了小区大门的角色，而拦截器则起着具体楼层门禁卡的作用。一般而言当发起一次请求时，最先经过过滤器处理，然而在经过相应的拦截器处理。</p>
 <h3 id="拦截器和过滤器的区别"><a href="#拦截器和过滤器的区别" class="headerlink" title="拦截器和过滤器的区别"></a>拦截器和过滤器的区别</h3><ul>
 <li>Filter依赖Servlet容器，属于Servlet容器规范的一部分，而拦截器是单独存在的，可以在任何情况下使用。</li>
 <li>Filter的执行由Servlet容器完成，而拦截器主要通过动态代理的方式执行</li>
@@ -537,6 +537,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/springboot/springboot%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/" rel="prev" title="SpringBoot文件的上传与下载">
+                SpringBoot文件的上传与下载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -622,7 +626,7 @@
             
               <div class="site-state-item site-state-posts">
                 <a href="/archives">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -644,7 +648,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -700,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器分别是什么？"><span class="nav-number">1.</span> <span class="nav-text">拦截器和过滤器分别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器的区别"><span class="nav-number">2.</span> <span class="nav-text">拦截器和过滤器的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器的实现方式"><span class="nav-number">3.</span> <span class="nav-text">拦截器和过滤器的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器的运用场景"><span class="nav-number">4.</span> <span class="nav-text">拦截器和过滤器的运用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器分别是什么"><span class="nav-number">1.</span> <span class="nav-text">拦截器和过滤器分别是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器的区别"><span class="nav-number">2.</span> <span class="nav-text">拦截器和过滤器的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器的实现方式"><span class="nav-number">3.</span> <span class="nav-text">拦截器和过滤器的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拦截器和过滤器的运用场景"><span class="nav-number">4.</span> <span class="nav-text">拦截器和过滤器的运用场景</span></a></li></ol></div>
             
 
           </div>
