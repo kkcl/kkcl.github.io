@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="SpringBoot,文件上传,文件下载," />
+  <meta name="keywords" content="Java,io," />
 
 
 
@@ -83,18 +83,17 @@
 
 
 
-<meta name="description" content="对于后端开发工程师而言，无论是开发什么类型的web应用，文件的上传与下载始终是两个绕不过去的技术点，针对不同的技术架构选择，可能具体实现的业务代码有所偏差，但从总体上而言，上传与下载的功能实现业务代码其实大同小异。本篇博文通过springboot的方式来实现上传与下载api。">
+<meta name="description" content="作为一名后端开发工程师，在日常的开发中肯定会涉及到各种各样操作IO流相关的场景，IO从字面意思表示输入输出。按照IO流不同划分的标准，可将IO流划分为以下的几种类型。从流的流向来分可划分为输入流(输入流指的是只能从中读取数据，而不能写入数据)和输出流(输入流指的是不能读取数据，只能写入数据)； IO流的分类 流向划分输入流：只能从中读取数据，而不能向其写出数据。输出流：只能向其写出数据，而不能从中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot文件的上传与下载">
-<meta property="og:url" content="https://kkcl.github.io/springboot/springboot%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/index.html">
+<meta property="og:title" content="Java中IO相关的操作">
+<meta property="og:url" content="https://kkcl.github.io/Java/Java%E4%B8%AD%E7%9A%84IO%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="饱腹百科">
-<meta property="og:description" content="对于后端开发工程师而言，无论是开发什么类型的web应用，文件的上传与下载始终是两个绕不过去的技术点，针对不同的技术架构选择，可能具体实现的业务代码有所偏差，但从总体上而言，上传与下载的功能实现业务代码其实大同小异。本篇博文通过springboot的方式来实现上传与下载api。">
-<meta property="article:published_time" content="2020-11-15T06:36:15.580Z">
-<meta property="article:modified_time" content="2020-11-15T06:57:58.719Z">
+<meta property="og:description" content="作为一名后端开发工程师，在日常的开发中肯定会涉及到各种各样操作IO流相关的场景，IO从字面意思表示输入输出。按照IO流不同划分的标准，可将IO流划分为以下的几种类型。从流的流向来分可划分为输入流(输入流指的是只能从中读取数据，而不能写入数据)和输出流(输入流指的是不能读取数据，只能写入数据)； IO流的分类 流向划分输入流：只能从中读取数据，而不能向其写出数据。输出流：只能向其写出数据，而不能从中">
+<meta property="article:published_time" content="2020-11-17T13:33:17.268Z">
+<meta property="article:modified_time" content="2020-11-21T07:44:24.185Z">
 <meta property="article:author" content="饱腹百科">
-<meta property="article:tag" content="SpringBoot">
-<meta property="article:tag" content="文件上传">
-<meta property="article:tag" content="文件下载">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="io">
 <meta name="twitter:card" content="summary">
 
 
@@ -125,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://kkcl.github.io/springboot/springboot文件的上传与下载/"/>
+  <link rel="canonical" href="https://kkcl.github.io/Java/Java中的IO操作/"/>
 
 
 
 
 
-  <title>SpringBoot文件的上传与下载 | 饱腹百科</title>
+  <title>Java中IO相关的操作 | 饱腹百科</title>
   
 
 
@@ -292,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kkcl.github.io/springboot/springboot%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/">
+    <link itemprop="mainEntityOfPage" href="https://kkcl.github.io/Java/Java%E4%B8%AD%E7%9A%84IO%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="饱腹百科">
@@ -309,7 +308,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">SpringBoot文件的上传与下载</h2>
+          <h2 class="post-title" itemprop="name headline">Java中IO相关的操作</h2>
         
 
         <div class="post-meta">
@@ -321,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-15T14:36:15+08:00">
-                2020-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-17T21:33:17+08:00">
+                2020-11-17
               </time>
             
 
@@ -344,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringBoot</span>
+                  <a href="/categories/Java%E5%9F%BA%E6%9C%AC%E5%8A%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基本功</span>
                   </a>
                 </span>
 
@@ -380,7 +379,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  634 字
+                  1.2k 字
                 </span>
               
 
@@ -396,7 +395,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -417,14 +416,33 @@
       
 
       
-        <p>对于后端开发工程师而言，无论是开发什么类型的web应用，文件的上传与下载始终是两个绕不过去的技术点，针对不同的技术架构选择，可能具体实现的业务代码有所偏差，但从总体上而言，上传与下载的功能实现业务代码其实大同小异。本篇博文通过springboot的方式来实现上传与下载api。<a id="more"></a>虽然网上的相关实现代码很多，但是案例再多，如果亲自实现一遍，总感觉是空中楼阁，可望不可及。</p>
-<h3 id="工程依赖"><a href="#工程依赖" class="headerlink" title="工程依赖"></a>工程依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+        <p>作为一名后端开发工程师，在日常的开发中肯定会涉及到各种各样操作IO流相关的场景，IO从字面意思表示输入输出。按照IO流不同划分的标准，可将IO流划分为以下的几种类型。从流的流向来分可划分为输入流(输入流指的是只能从中读取数据，而不能写入数据)和输出流(输入流指的是不能读取数据，只能写入数据)；</p>
+<h3 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h3><ul>
+<li><p>流向划分<br>输入流：只能从中读取数据，而不能向其写出数据。<br>输出流：只能向其写出数据，而不能从中读取数据。<br>输入流主要由InputStream和Reader作为基类。<br>输出流则主要由OutputStream和Writer作为基类</p>
+</li>
+<li><p>最小数据操作单元<br>字节流：字节流操作的最小数据单元是 8位的字节。<br>字符流：最小数据单元是 16位的字符。<br>字节流主要有InputStream和OutputStream作为基类。<br>字符流则主要由Reader和Writer作为基类。</p>
+</li>
+<li><p>流的角色<br>节点流：节点流可以从/向一个特定的IO设备(如磁盘、网络)读/写数据的流<br>处理流：已存在的流(节点流或处理流)进行连接或封装</p>
+</li>
+</ul>
+<h3 id="IO流读取常用方法"><a href="#IO流读取常用方法" class="headerlink" title="IO流读取常用方法"></a>IO流读取常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line">public class FileUtils &#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;**创建文件**&#x2F;</span><br><span class="line">    public static boolean createFile(String path) &#123;</span><br><span class="line">        boolean result &#x3D; false;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        if(!file.exists())&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                result &#x3D; file.createNewFile();</span><br><span class="line">            &#125;catch (Exception e)&#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**创建文件夹**&#x2F;</span><br><span class="line">    public static boolean createDirectory(String directory)&#123;</span><br><span class="line">        boolean result &#x3D; false;</span><br><span class="line">        File file &#x3D; new File(directory);</span><br><span class="line">        if(!file.exists())&#123;</span><br><span class="line">            result &#x3D; file.mkdirs();</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**删除文件**&#x2F;</span><br><span class="line">    public static boolean deleteFile(String path) &#123;</span><br><span class="line">        boolean result &#x3D; false;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line"></span><br><span class="line">        if(file.exists() &amp;&amp; file.isFile())&#123;</span><br><span class="line">            result &#x3D; file.delete();</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**删除文件夹(包括子文件夹及文件)**&#x2F;</span><br><span class="line">    public static void deleteDirectory(String path) &#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        if(!file.exists())&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(file.isFile())&#123;</span><br><span class="line">            file.delete();</span><br><span class="line">        &#125;else if(file.isDirectory())&#123;</span><br><span class="line">            File [] files &#x3D; file.listFiles();</span><br><span class="line">            for(File f : files)&#123;</span><br><span class="line">                deleteDirectory(path + &quot;&#x2F;&quot; + f.getName());</span><br><span class="line">            &#125;</span><br><span class="line">            file.delete();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**采用字节方式读取文件**&#x2F;</span><br><span class="line">    public static String readFileByBytes(String path)&#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        if(!file.exists() || !file.isFile())&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        StringBuffer content &#x3D; new StringBuffer();</span><br><span class="line">        try &#123;</span><br><span class="line">            byte[] temp &#x3D; new byte[1024];</span><br><span class="line">            FileInputStream fileInputStream &#x3D; new FileInputStream(file);</span><br><span class="line">            while(fileInputStream.read(temp) !&#x3D; -1)&#123;</span><br><span class="line">                content.append(new String(temp));</span><br><span class="line">                temp &#x3D; new byte[1024];</span><br><span class="line">            &#125;</span><br><span class="line">            fileInputStream.close();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return content.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**采用字符方式读取文件**&#x2F;</span><br><span class="line">    public static String readFileByChars(String path)&#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        if(!file.exists() || !file.isFile())&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        StringBuffer content &#x3D; new StringBuffer();</span><br><span class="line">        try &#123;</span><br><span class="line">            char[] temp &#x3D; new char[1024];</span><br><span class="line">            FileInputStream fileInputStream &#x3D; new FileInputStream(file);</span><br><span class="line">            InputStreamReader inputStreamReader &#x3D; new InputStreamReader(fileInputStream, &quot;GBK&quot;);</span><br><span class="line">            while(inputStreamReader.read(temp) !&#x3D; -1)&#123;</span><br><span class="line">                content.append(new String(temp));</span><br><span class="line">                temp &#x3D; new char[1024];</span><br><span class="line">            &#125;</span><br><span class="line">            fileInputStream.close();</span><br><span class="line">            inputStreamReader.close();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return content.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**按行读取文本文件的内容**&#x2F;</span><br><span class="line">    public static List&lt;String&gt; readFileByLines(String path) &#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        if(!file.exists() || !file.isFile())&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; content &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            FileInputStream fileInputStream &#x3D; new FileInputStream(file);</span><br><span class="line">            InputStreamReader inputStreamReader &#x3D; new InputStreamReader(fileInputStream, &quot;GBK&quot;);</span><br><span class="line">            BufferedReader bufferedReader &#x3D; new BufferedReader(inputStreamReader);</span><br><span class="line">            String lineContent &#x3D; &quot;&quot;;</span><br><span class="line">            while((lineContent &#x3D; bufferedReader.readLine()) !&#x3D; null)&#123;</span><br><span class="line">                content.add(lineContent);</span><br><span class="line">            &#125;</span><br><span class="line">            fileInputStream.close();</span><br><span class="line">            inputStreamReader.close();</span><br><span class="line">            bufferedReader.close();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return content;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**FileOutputStream写入文件**&#x2F;</span><br><span class="line">    public static void writeFileByFileOutputStream(String path, String content) &#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        try&#123;</span><br><span class="line">            FileOutputStream fileOutputStream &#x3D; new FileOutputStream(path);</span><br><span class="line">            fileOutputStream.write(content.getBytes(&quot;GBK&quot;));</span><br><span class="line">            fileOutputStream.close();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**BufferFileOutputStream写入文件**&#x2F;</span><br><span class="line">    public static void writeFileByBufferFileOutputStream(String path, String content) &#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        try&#123;</span><br><span class="line">            BufferedOutputStream bufferedOutputStream &#x3D; new BufferedOutputStream(new FileOutputStream(file));</span><br><span class="line">            bufferedOutputStream.write(content.getBytes());</span><br><span class="line">            bufferedOutputStream.flush();</span><br><span class="line">            bufferedOutputStream.close();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**FileWriter写入文件**&#x2F;</span><br><span class="line">    public static void writeFileByFileWriter(String path, String content)&#123;</span><br><span class="line">        File file &#x3D; new File(path);</span><br><span class="line">        try &#123;</span><br><span class="line">            FileWriter fileWriter &#x3D; new FileWriter(path);</span><br><span class="line">            fileWriter.write(content);</span><br><span class="line">            fileWriter.flush();</span><br><span class="line">            fileWriter.close();</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file.upload.url&#x3D;C:&#x2F;Users&#x2F;CHENG&#x2F;Desktop&#x2F;upload</span><br><span class="line">file.download.url&#x3D;C:&#x2F;Users&#x2F;CHENG&#x2F;Desktop&#x2F;download</span><br><span class="line">file.delete.url&#x3D;C:&#x2F;Users&#x2F;CHENG&#x2F;Desktop&#x2F;delete</span><br><span class="line">spring.servlet.multipart.max-file-size&#x3D; 50MB</span><br><span class="line">spring.servlet.multipart.max-request-size&#x3D; 50MB</span><br></pre></td></tr></table></figure>
-<h3 id="上传功能实现"><a href="#上传功能实现" class="headerlink" title="上传功能实现"></a>上传功能实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;&#x2F;file&quot;)</span><br><span class="line">public class FileController &#123;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;file.upload.url&#125;&quot;)</span><br><span class="line">    private String uploadFilePath;</span><br><span class="line"></span><br><span class="line">    @PostMapping(&quot;&#x2F;upload&quot;)</span><br><span class="line">    public String upload(@RequestParam(&quot;files&quot;)MultipartFile files[])&#123;</span><br><span class="line">        JSONObject object &#x3D; new JSONObject();</span><br><span class="line"></span><br><span class="line">        for(int i &#x3D; 0; i &lt; files.length; i++)&#123;</span><br><span class="line">            String fileName &#x3D; files[i].getOriginalFilename();</span><br><span class="line">            File dist &#x3D; new File(uploadFilePath + &quot;&#x2F;&quot; + fileName);</span><br><span class="line">            if(!dist.getParentFile().exists())&#123;</span><br><span class="line">                dist.getParentFile().mkdirs();</span><br><span class="line">            &#125;</span><br><span class="line">            try&#123;</span><br><span class="line">                files[i].transferTo(dist);</span><br><span class="line">            &#125;catch (Exception e)&#123;</span><br><span class="line">                object.put(&quot;failure&quot;, 1);</span><br><span class="line">                object.put(&quot;result&quot;, &quot;文件上传失败！&quot;);</span><br><span class="line">                return object.toString();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        object.put(&quot;success&quot;, 2);</span><br><span class="line">        object.put(&quot;result&quot;, &quot;上传成功！&quot;);</span><br><span class="line">        return object.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文件读取综合案例"><a href="#文件读取综合案例" class="headerlink" title="文件读取综合案例"></a>文件读取综合案例</h3><p>最后针对文件的举一个实际的运用场景，前端上传指定格式的文件，后端读取文件的二进制流，并针对文件的内容进行相关的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#submit&quot;).click(function () &#123;</span><br><span class="line"></span><br><span class="line">   var formData &#x3D; new FormData();</span><br><span class="line">   formData.append(&quot;file&quot;, $(&#39;#file&#39;)[0].files[0]);</span><br><span class="line">   formData.append(&quot;note&quot;, $(&quot;#note&quot;).val());</span><br><span class="line"></span><br><span class="line">   var ajaxUrl &#x3D; &quot;&#x2F;admin&#x2F;imei&#x2F;insertData&quot;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">       type: &quot;POST&quot;,</span><br><span class="line">       url: ajaxUrl,</span><br><span class="line">       data: formData,</span><br><span class="line">       processData: false,</span><br><span class="line">       contentType: false,</span><br><span class="line">       datatype: &quot;json&quot;,</span><br><span class="line">       success: function (data) &#123;</span><br><span class="line">           var responseData &#x3D; JSON.parse(data);</span><br><span class="line">           if (responseData.status &#x3D;&#x3D; &quot;success&quot;) &#123;</span><br><span class="line">               location.reload();</span><br><span class="line">               alert(&quot;提交成功&quot;)</span><br><span class="line">           &#125; </span><br><span class="line">       &#125;,</span><br><span class="line">       error: function () &#123;</span><br><span class="line">            alert(&quot;提交失败&quot;)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">public JSONObject imeiDataInsert(MultipartFile file, String note, HttpServletRequest httpServletRequest) throws IOException &#123;</span><br><span class="line">       String operator &#x3D; httpUtils.getUserEmailFromRequest(httpServletRequest);</span><br><span class="line"></span><br><span class="line">       Reader reader &#x3D; new InputStreamReader(file.getInputStream(), &quot;utf-8&quot;);</span><br><span class="line">       BufferedReader br &#x3D; new BufferedReader(reader);</span><br><span class="line">       String line;</span><br><span class="line">       boolean result &#x3D; false;</span><br><span class="line">       while ((line &#x3D; br.readLine()) !&#x3D; null) &#123;</span><br><span class="line">           result &#x3D; adminBiz.imeiDataInsert(line, note);</span><br><span class="line">       &#125;</span><br><span class="line">       return httpUtils.getResponseObj(result ? ResponseCode.Success : ResponseCode.Failed)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="下载功能实现"><a href="#下载功能实现" class="headerlink" title="下载功能实现"></a>下载功能实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;&#x2F;file&quot;)</span><br><span class="line">public class FileController &#123;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;file.download.url&#125;&quot;)</span><br><span class="line">    private String downloadFilePath;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;&#x2F;download&quot;)</span><br><span class="line">    public String download(HttpServletResponse response,@RequestParam(&quot;fileName&quot;) String fileName)&#123;</span><br><span class="line">        File file &#x3D; new File(downloadFilePath + &quot;&#x2F;&quot; + fileName);</span><br><span class="line"></span><br><span class="line">        if(!file.exists())&#123;</span><br><span class="line">            return &quot;文件不存在&quot;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        response.reset();</span><br><span class="line">        response.setContentType(&quot;application&#x2F;octet-stream&quot;);</span><br><span class="line">        response.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line">        response.setContentLength((int)file.length());</span><br><span class="line">        response.setHeader(&quot;Content-Disposition&quot;,&quot;attachement;filename&#x3D;&quot; + fileName);</span><br><span class="line"></span><br><span class="line">        try(BufferedInputStream bis &#x3D; new BufferedInputStream(new FileInputStream(file)))&#123;</span><br><span class="line">            byte [] buff &#x3D; new byte[1024];</span><br><span class="line">            OutputStream os &#x3D; response.getOutputStream();</span><br><span class="line">            int i &#x3D; 0;</span><br><span class="line">            while((i &#x3D; bis.read(buff)) !&#x3D; -1)&#123;</span><br><span class="line">                os.write(buff, 0, i);</span><br><span class="line">                os.flush();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;catch (IOException e)&#123;</span><br><span class="line">            return &quot;下载失败！&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return &quot;下载成功！&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="附带删除功能"><a href="#附带删除功能" class="headerlink" title="附带删除功能"></a>附带删除功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;&#x2F;file&quot;)</span><br><span class="line">public class FileController &#123;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;file.delete.url&#125;&quot;)</span><br><span class="line">    private String deleteFilePath;</span><br><span class="line"> </span><br><span class="line">    @DeleteMapping(&quot;&#x2F;delete&quot;)</span><br><span class="line">    public String deleteFile(@RequestParam(&quot;path&quot;) String path)&#123;</span><br><span class="line">        File file &#x3D; new File(deleteFilePath + &quot;&#x2F;&quot; + path);</span><br><span class="line">        if(file.isFile() &amp;&amp; file.exists())&#123;</span><br><span class="line">            file.delete();</span><br><span class="line">            return &quot;文件删除成功&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return &quot;文件删除失败！&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -482,7 +500,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://kkcl.github.io/springboot/springboot%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/" title="SpringBoot文件的上传与下载">https://kkcl.github.io/springboot/springboot%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/</a>
+    <a href="https://kkcl.github.io/Java/Java%E4%B8%AD%E7%9A%84IO%E6%93%8D%E4%BD%9C/" title="Java中IO相关的操作">https://kkcl.github.io/Java/Java%E4%B8%AD%E7%9A%84IO%E6%93%8D%E4%BD%9C/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -497,11 +515,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag"># 文件上传</a>
-          
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="tag"># 文件下载</a>
+            <a href="/tags/io/" rel="tag"># io</a>
           
         </div>
       
@@ -514,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/springboot/springboot%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="next" title="SpringBoot中的拦截器和过滤器">
-                <i class="fa fa-chevron-left"></i> SpringBoot中的拦截器和过滤器
+              <a href="/springboot/springboot%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD/" rel="next" title="SpringBoot文件的上传与下载">
+                <i class="fa fa-chevron-left"></i> SpringBoot文件的上传与下载
               </a>
             
           </div>
@@ -523,10 +539,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Java/Java%E4%B8%AD%E7%9A%84IO%E6%93%8D%E4%BD%9C/" rel="prev" title="Java中IO相关的操作">
-                Java中IO相关的操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -691,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程依赖"><span class="nav-number">1.</span> <span class="nav-text">工程依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">2.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传功能实现"><span class="nav-number">3.</span> <span class="nav-text">上传功能实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载功能实现"><span class="nav-number">4.</span> <span class="nav-text">下载功能实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附带删除功能"><span class="nav-number">5.</span> <span class="nav-text">附带删除功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流的分类"><span class="nav-number">1.</span> <span class="nav-text">IO流的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO流读取常用方法"><span class="nav-number">2.</span> <span class="nav-text">IO流读取常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件读取综合案例"><span class="nav-number">3.</span> <span class="nav-text">文件读取综合案例</span></a></li></ol></div>
             
 
           </div>
@@ -939,7 +951,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitment({
-            id: '1605422175580', 
+            id: '1605619997268', 
             owner: 'kkcl',
             repo: 'gitment-comments',
             
