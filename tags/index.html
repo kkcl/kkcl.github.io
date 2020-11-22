@@ -296,10 +296,10 @@
         
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-                目前共计 6 个标签
+                目前共计 7 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/Java/" style="font-size: 12px; color: #ccc">Java</a> <a href="/tags/SpringBoot/" style="font-size: 21px; color: #6f6f6f">SpringBoot</a> <a href="/tags/io/" style="font-size: 12px; color: #ccc">io</a> <a href="/tags/wechat/" style="font-size: 30px; color: #111">wechat</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 12px; color: #ccc">文件上传</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" style="font-size: 12px; color: #ccc">文件下载</a>
+              <a href="/tags/Java/" style="font-size: 21px; color: #6f6f6f">Java</a> <a href="/tags/SpringBoot/" style="font-size: 21px; color: #6f6f6f">SpringBoot</a> <a href="/tags/io/" style="font-size: 12px; color: #ccc">io</a> <a href="/tags/wechat/" style="font-size: 30px; color: #111">wechat</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 12px; color: #ccc">多线程</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="font-size: 12px; color: #ccc">文件上传</a> <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" style="font-size: 12px; color: #ccc">文件下载</a>
             </div>
           </div>
         
@@ -357,7 +357,7 @@
             
               <div class="site-state-item site-state-posts">
                 <a href="/archives">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -379,7 +379,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -653,21 +653,30 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-       <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-       <script src="https://billts.site/js/gitment.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'X7pdiy913WkCPCl0lPU62SGd-9Nh9j0Va',
+        appKey: 'br7JunS9xTuTJL2KRHbGn5os',
+        placeholder: 'Just go go',
+        avatar:'/images/avatar.png',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

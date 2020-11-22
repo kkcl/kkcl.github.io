@@ -355,6 +355,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/wechat/%E6%87%82%E7%8E%8B%EF%BC%8C%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E4%B8%8D%E5%AD%98%E5%9C%A8%E8%AE%A4%E8%BE%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/wechat/%E6%87%82%E7%8E%8B%EF%BC%8C%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E4%B8%8D%E5%AD%98%E5%9C%A8%E8%AE%A4%E8%BE%93/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -523,6 +533,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/Java/Java%E4%B8%AD%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="prev" title="Java中的多线程">
+                Java中的多线程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -552,11 +566,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
-
   
 
   
@@ -599,7 +609,7 @@
             
               <div class="site-state-item site-state-posts">
                 <a href="/archives">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +631,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -895,43 +905,30 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-       <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-       <script src="https://billts.site/js/gitment.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitment({
-            id: '1605945348776', 
-            owner: 'kkcl',
-            repo: 'gitment-comments',
-            
-            oauth: {
-            
-            
-                client_secret: '35c11b70d25caef3aa88a6d71fed3c8d01b504f5',
-            
-                client_id: '577e43bc3ab8bb04703f'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'X7pdiy913WkCPCl0lPU62SGd-9Nh9j0Va',
+        appKey: 'br7JunS9xTuTJL2KRHbGn5os',
+        placeholder: 'Just go go',
+        avatar:'/images/avatar.png',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kkcl.github.io/"/>
-  <updated>2020-11-21T08:06:07.422Z</updated>
+  <updated>2020-11-22T03:31:30.396Z</updated>
   <id>https://kkcl.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java中的多线程</title>
+    <link href="https://kkcl.github.io/Java/Java%E4%B8%AD%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>https://kkcl.github.io/Java/Java%E4%B8%AD%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/</id>
+    <published>2020-11-22T03:22:54.423Z</published>
+    <updated>2020-11-22T03:31:30.396Z</updated>
+    
+    <content type="html"><![CDATA[<p>作为一个后端程序员，尤其是一名主力编程语言为Java的程序员而言，多线程始终是一道迈不过去的坎，就像大国各自的原子弹一样，虽然不用但是不能没有，同样多线程虽然在日常的编码中几乎很少涉及，但也不是说没有应用。<a id="more"></a>如果你的回答是没有接触过相关的业务场景，不是你从事的项目过于低端，就是你的公司业务确实没必要涉及到相关的业务开发，但无论如何，即使日常开发不用，并不代表你可以偷懒不掌握，否则下次跳槽的时候可能会被打击的体无完肤。</p><h3 id="多线程的含义"><a href="#多线程的含义" class="headerlink" title="多线程的含义"></a>多线程的含义</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一个后端程序员，尤其是一名主力编程语言为Java的程序员而言，多线程始终是一道迈不过去的坎，就像大国各自的原子弹一样，虽然不用但是不能没有，同样多线程虽然在日常的编码中几乎很少涉及，但也不是说没有应用。
+    
+    </summary>
+    
+    
+      <category term="Java基本功" scheme="https://kkcl.github.io/categories/Java%E5%9F%BA%E6%9C%AC%E5%8A%9F/"/>
+    
+    
+      <category term="Java" scheme="https://kkcl.github.io/tags/Java/"/>
+    
+      <category term="多线程" scheme="https://kkcl.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>懂王，我的世界不存在认输！</title>
